@@ -1,0 +1,33 @@
+body {
+	background-color: #ececec;
+}
+/*搜索名称*/
+.searchTitle{
+	width		: 150px;
+	height		: 27px;
+	line-height	: 20px;
+	font-family	: "黑体";
+	text-align  : right;
+	padding-left: 10px;
+}
+/*搜索框架*/
+.searchFrame {
+	width		: 200px;
+	height		: 26px;
+	line-height	: 20px;
+	font-size	: 14px;
+	font-weight	: bold;
+	padding-left: 10px;
+	border		: 2px solid #0088a8;
+}
+/*搜索按钮*/
+.searchButton{
+	width		: 26px;
+	height		: 26px;
+	cursor		: pointer;
+	margin-left	: 5px;
+}
+/*表格标题*/
+.tableTitle{
+	background-image: url("./static/images/frame/pageFrame.png");
+}
