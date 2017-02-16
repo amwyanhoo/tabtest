@@ -1,0 +1,1 @@
+applicationContext-dao.xml也可以直接写在applicationContext.xml中，

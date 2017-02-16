@@ -5,6 +5,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 <configuration>
 	<typeAliases>
 		<!-- 批量扫描别名 -->
-		<package name="cn.itcast.ssm.po"/>
+		<package name="com.amwyanhoo.entity"/>
 	</typeAliases>
 </configuration>
