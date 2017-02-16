@@ -1,16 +1,7 @@
 package com.amwyanhoo.entity;
 
 
-//包装类
+//用以查询返回结果
+public class PfUserCopy extends PfUser{
 
-public class PfUserCopy{
-	private PfUser pfuser;
-
-	public void setPfuser(PfUser pfuser) {
-		this.pfuser = pfuser;
-	}
-
-	public PfUser getPfuser() {
-		return pfuser;
-	}
 }

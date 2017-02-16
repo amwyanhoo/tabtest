@@ -7,4 +7,8 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<!-- 批量扫描别名 -->
 		<package name="com.amwyanhoo.entity"/>
 	</typeAliases>
+<!--	<mappers>-->
+<!--		<mapper resource="com/amwyanhoo/dao/PfUserDao.xml"/>-->
+<!--		<mapper resource="com/amwyanhoo/dao/PfUserMapper.xml"/>-->
+<!--	</mappers>-->
 </configuration>

@@ -31,11 +31,11 @@
 				"icon":
 						"icon-sys",
 				"menus":
-						[{"icon":"icon-nav","menuname":"审计管理员管理","url":"/pfuser/SelectSJAdmin"},
-						{"icon":"icon-nav","menuname":"审计操作员管理","url":"/pfuser/queryForPageList"}
+						[{"icon":"icon-nav","menuname":"人员列表","url":"/PfUser/findPfUserList"},
+						{"icon":"icon-nav","menuname":"人员角色管理","url":"/pfuser/queryForPageList"}
 						],
 				"menuid":
-						"610","menuname":"用户信息管理"
+						"610","menuname":"人员信息管理"
 				}
 			]
 		} ;
