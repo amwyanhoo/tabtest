@@ -1,38 +1,42 @@
+<%@ page language="java" import="java.util.*" pageEncoding="GB18030"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-<head>
-	<meta charset="UTF-8">
-	<title>Д╨╨Е▒≤Е┬≈Х║╗ </title>
-	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/static/js/easyui/js/themes/default/easyui.css">
-	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/static/js/easyui/js/themes/icon.css">
-	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/static/js/easyui/demo.css">
-	<script type="text/javascript" src="<%=request.getContextPath() %>/static/js/easyui/js/jquery-1.4.2.min.js"></script>
-	<script type="text/javascript" src="<%=request.getContextPath() %>/static/js/easyui/js/jQuery.easyui.js"></script>
-	<script type="text/javascript" src="<%=request.getContextPath() %>/static/js/easyui/easyloader.js"></script>
-</head>
-<body>
-	<h2>Д╨╨Е▒≤Е┬≈Х║╗</h2>
+  <head>
+    <base href="<%=basePath%>">
+    
+    <title>хкт╠ап╠М </title>
+    
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+	<!--
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	-->
+
+  </head>
+  
+  <body>
+  	<h2>хкт╠ап╠М</h2>
 	
-	<table>
+	<table border="1">
 		<tr>
 			<td>ID</td>
-			<td>Д╨╨Е▒≤Е░█Г╖╟</td>
-			<td>Е°╗Г■╗Г┼╤Ф─│</td>
+			<td>хкт╠цШЁф</td>
 		</tr>
 		<c:forEach var="item" items="${items}" varStatus="index">
 			<tr>
 				<td>${item.userid}</td>
 				<td>${item.username}</td>
-				<td>
-					<c:choose>
-						<c:when test="${item.ieventresult=='1'}">Ф╜ёЕ╦╦</c:when> 
-						<c:otherwise>Е╥╡ФЁ╗И■─</c:otherwise>
-					</c:choose>
-				</td>
 			</tr>
 		</c:forEach>
 	</table>
-</body>
+  </body>
 </html>

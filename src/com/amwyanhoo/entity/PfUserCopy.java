@@ -1,7 +1,6 @@
 package com.amwyanhoo.entity;
 
 
-//ÓÃÒÔ²éÑ¯·µ»Ø½á¹û
+//ï¿½ï¿½ï¿½Ô²ï¿½Ñ¯ï¿½ï¿½ï¿½Ø½ï¿½ï¿½
 public class PfUserCopy extends PfUser{
-
 }

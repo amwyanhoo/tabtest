@@ -21,6 +21,7 @@
     <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/static/js/easyui/js/themes/default/easyui.css" />
     <script type="text/javascript" src="<%=request.getContextPath() %>/static/js/easyui/js/jquery-1.4.2.min.js"></script>
     <script type="text/javascript" src="<%=request.getContextPath() %>/static/js/easyui/js/jQuery.easyui.js"></script>
+    <script type="text/javascript" src="<%=request.getContextPath() %>/static/js/easyui/easyloader.js"></script>
     <script type="text/javascript">
 <%--	 var _menus2 =<%=parentMenuStr%> ;--%>
 	 var _menus2 ={
@@ -30,11 +31,11 @@
 				"icon":
 						"icon-sys",
 				"menus":
-						[{"icon":"icon-nav","menuname":"审计管理员管理","url":"/pfuser/SelectSJAdmin"},
-						{"icon":"icon-nav","menuname":"审计操作员管理","url":"/pfuser/queryForPageList"}
+						[{"icon":"icon-nav","menuname":"人员列表","url":"/pfuser/findPfUserList"},
+						{"icon":"icon-nav","menuname":"人员角色管理","url":"/pfuser/queryForPageList"}
 						],
 				"menuid":
-						"610","menuname":"用户信息管理"
+						"610","menuname":"人员信息管理"
 				}
 			]
 		} ;
@@ -56,52 +57,6 @@
             $('#w').window('close');
         }
 
-        //修改密码
-        function serverLogin() {
-            var $newpass = $('#txtNewPass');
-            var $rePass = $('#txtRePass');
-
-            if ($newpass.val() == '') {
-                msgShow('系统提示', '请输入密码！', 'warning');
-                return false;
-            }
-            if ($rePass.val() == '') {
-                msgShow('系统提示', '请在一次输入密码！', 'warning');
-                return false;
-            }
-            if ($newpass.val() != $rePass.val()) {
-                msgShow('系统提示', '两次密码不一至！请重新输入', 'warning');
-                return false;
-            }
-           
-            $.post('/ajax/editpassword.ashx?newpass=' + $newpass.val(), function(msg) {
-                msgShow('系统提示', '恭喜，密码修改成功！<br>您的新密码为：' + msg, 'info');
-                $newpass.val('');
-                $rePass.val('');
-                close();
-            })
-        }
-        
-		//退出
-        $(function() {
-            openPwd();
-            //
-            $('#editpass').click(function() {
-                $('#w').window('open');
-            });
-
-            $('#btnEp').click(function() {
-                serverLogin();
-            })
-           
-            $('#loginOut').click(function() {
-                $.messager.confirm('系统提示', '您确定要退出本次登录吗?', function(r) {
-                    if (r) {
-                        location.href = '/ajax/loginout.ashx';
-                    }
-                });
-            })
-        });
     </script>
 
 <style type="text/css">
@@ -203,11 +158,31 @@ div.menu ul li a:active
     </div>
     <div region="west" split="true" title="菜单栏" style="width:220px;" id="west" >
            <div class="easyui-accordion" fit="true" border="false" >
+           		<div title="用户信息管理"  icon="icon-sys" style="overflow:auto;">
+	<ul>
+		<li>
+			<div  onclick="showMenu(this,'mainFrame00')">
+				<img src="/tabtest/static/img/index/txt.gif" />
+				<a target=mainFrame00 href="/tabtest/pfuser/SelectSJAdmin" >
+					<span class="icon icon-nav" >
+					</span>审计管理员管理
+				</a>
+			</div>
+		</li> 
+		<li>
+			<div  onclick="showMenu(this,'mainFrame01')">
+				<img src="/tabtest/static/img/index/txt.gif" />
+				<a target=mainFrame01 href="/tabtest/pfuser/queryForPageList" >
+				<span class="icon icon-nav" ></span>
+				审计操作员管理</a>
+			</div></li> 
+	</ul>
+</div>
 			</div>
     </div>
 <!--  background-image:url('<%=request.getContextPath() %>/static/images/changePic/1435043866443794.png');background-repeat: no-repeat;  -->
     <div id="mainPanle" style="background-image:url('<%=request.getContextPath() %>/static/images/changePic/xlogo.jpg');background-repeat: no-repeat;overflow-y:hidden" region="center">
-		  
+		 
         <div id="tabs" class="easyui-tabs"  fit="true" border="false">
 			<div title="首页" style="overflow:hidden;text-align:center;" id="home">
 				   <table cellpadding="0" cellspacing="0" border="0" width="100%" height="70%"style="margin:0px auto;">

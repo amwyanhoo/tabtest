@@ -1,5 +1,9 @@
 package com.amwyanhoo.ctl;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,15 +16,21 @@ import com.amwyanhoo.entity.PfUserPack;
 import com.amwyanhoo.service.PfUserService;
 
 @Controller
-@RequestMapping("/PfUser")
+@RequestMapping("pfuser")
 public class PfUserCtl {
-	@Autowired
+	@Resource
 	private PfUserService pfuserservice;
 	
-	@RequestMapping("findPfUserList")
+	@RequestMapping("/findPfUserList")
 	public String findPfUserList(HttpServletRequest request,Model model,PfUserPack pfuserpack){
-		PfUserCopy pfuser = pfuserservice.findPfUserList(null);
-		model.addAttribute("items", pfuser);
+		List<PfUserCopy>  list = pfuserservice.findPfUserList(null);
+//		List<PfUserCopy> list =new ArrayList();
+//		PfUserCopy pf1 = new PfUserCopy();
+//		pf1.setUserid("1");
+//		pf1.setUsername("黄艳虎");
+//		list.add(pf1);
+		model.addAttribute("items", list);
+		
 		return "pfuserlist";
 	}
 }

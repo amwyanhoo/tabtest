@@ -1,5 +1,7 @@
 package com.amwyanhoo.service;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Component;
@@ -15,7 +17,7 @@ public class PfUserServiceImpl implements PfUserService{
 	@Resource
 	private PfUserDao pfUserDao;
 	
-	public PfUserCopy findPfUserList(PfUserPack pfuserpack) {
+	public List<PfUserCopy> findPfUserList(PfUserPack pfuserpack) {
 		return pfUserDao.findPfUserList(pfuserpack);
 	}
 

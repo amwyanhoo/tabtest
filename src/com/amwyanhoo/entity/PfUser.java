@@ -3,9 +3,9 @@ package com.amwyanhoo.entity;
 public class PfUser {
     private String userid;
 
-    private Short iadmintype;
+    private int iadmintype;
 
-    private Short iadminstatus;
+    private int iadminstatus;
 
     private String username;
 
@@ -29,19 +29,19 @@ public class PfUser {
         this.userid = userid == null ? null : userid.trim();
     }
 
-    public Short getIadmintype() {
+    public int getIadmintype() {
         return iadmintype;
     }
 
-    public void setIadmintype(Short iadmintype) {
+    public void setIadmintype(int iadmintype) {
         this.iadmintype = iadmintype;
     }
 
-    public Short getIadminstatus() {
+    public int getIadminstatus() {
         return iadminstatus;
     }
 
-    public void setIadminstatus(Short iadminstatus) {
+    public void setIadminstatus(int iadminstatus) {
         this.iadminstatus = iadminstatus;
     }
 

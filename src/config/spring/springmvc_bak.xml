@@ -13,10 +13,8 @@
 		http://www.springframework.org/schema/tx 
 		http://www.springframework.org/schema/tx/spring-tx-3.2.xsd ">
 		
-		<mvc:annotation-driven/>
-		<context:component-scan base-package="com.amwyanhoo.*"></context:component-scan>
+		<mvc:annotation-driven></mvc:annotation-driven>
 		
-<!--		<mvc:annotation-driven></mvc:annotation-driven>-->
 		<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 			<property name="prefix" value="/view/"/>
 			<property name="suffix" value=".jsp"/>
@@ -34,7 +32,14 @@
 	            <value>32505856</value>   
 	        </property>
 		</bean>
-	
-	<mvc:resources location="/static/" mapping="/static/**" /> 
+		
+	<mvc:resources location="/static/js/easyui/css/" mapping="/css/**" />
+    <mvc:resources location="/static/js/easyui/images/" mapping="/images/**" />
+    <mvc:resources location="/static/js/easyui/js/" mapping="/js/**" />
+	<mvc:resources location="/static/js/easyui/locale/" mapping="/locale/**" />  
+	<mvc:resources location="/static/js/easyui/plugins/" mapping="/plugins/**" />  
+	<mvc:resources location="/static/js/easyui/src/" mapping="/src/**" />  
+	<mvc:resources location="/static/js/easyui/themes/" mapping="/themes/**" />  
+	<mvc:resources location="/static/js/easyui/" mapping="/**" /> 
 		
 </beans>
