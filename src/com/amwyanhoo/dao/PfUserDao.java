@@ -6,4 +6,5 @@ import java.util.*;
 
 public interface PfUserDao {
 	public List<PfUserCopy> findPfUserList(PfUserPack pfuserpack);
+	public List<PfUserCopy> findPfUserListwithrole(PfUserPack pfuserpack);
 }

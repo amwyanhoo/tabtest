@@ -21,4 +21,9 @@ public class PfUserServiceImpl implements PfUserService{
 		return pfUserDao.findPfUserList(pfuserpack);
 	}
 
+	public List<PfUserCopy> findPfUserListwithrole(PfUserPack pfuserpack) {
+		// TODO Auto-generated method stub
+		return pfUserDao.findPfUserListwithrole(pfuserpack);
+	}
+
 }

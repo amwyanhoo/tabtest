@@ -24,17 +24,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-  	<h2>人员列表</h2>
+  	<h2 style="color:#3398D4;" >人员列表</h2>
 	
-	<table border="1">
+	<table border="3" bordercolor="3398D4" width="800">
 		<tr>
-			<td>ID</td>
-			<td>人员名称</td>
+			<td align="center">ID</td>
+			<td align="center">人员名称</td>
+			<td align="center">角色</td>
 		</tr>
 		<c:forEach var="item" items="${items}" varStatus="index">
 			<tr>
-				<td>${item.userid}</td>
-				<td>${item.username}</td>
+				<td align="center">${item.userid}</td>
+				<td align="center">${item.username}</td>
+				<td align="center">
+					<c:choose>
+						<c:when test="${item.roleid=='100'}">超级管理员</c:when>            
+						<c:when test="${item.roleid=='101'}">业务管理员</c:when>
+						<c:when test="${item.roleid=='102'}">审计操作员</c:when>
+						<c:when test="${item.roleid=='103'}">业务操作员</c:when>
+						<c:when test="${item.roleid=='104'}">审计管理员</c:when>
+					</c:choose>
+				</td>
 			</tr>
 		</c:forEach>
 	</table>

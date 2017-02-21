@@ -7,4 +7,5 @@ import com.amwyanhoo.entity.PfUserPack;
 
 public interface PfUserService {
 	public List<PfUserCopy>  findPfUserList(PfUserPack pfuserpack);
+	public List<PfUserCopy>  findPfUserListwithrole(PfUserPack pfuserpack);
 }

@@ -23,7 +23,8 @@ public class PfUserCtl {
 	
 	@RequestMapping("/findPfUserList")
 	public String findPfUserList(HttpServletRequest request,Model model,PfUserPack pfuserpack){
-		List<PfUserCopy>  list = pfuserservice.findPfUserList(null);
+		List<PfUserCopy>  list = pfuserservice.findPfUserListwithrole(null);
+		//List<PfUserCopy>  list = pfuserservice.findPfUserList(null);
 //		List<PfUserCopy> list =new ArrayList();
 //		PfUserCopy pf1 = new PfUserCopy();
 //		pf1.setUserid("1");

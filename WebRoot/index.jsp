@@ -8,8 +8,6 @@
 	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"";
 
 	String parentMenuStr=(String)request.getAttribute("parentMenuStr");
-	String deptId=(String)request.getAttribute("deptId");
-	String userId=(String)request.getAttribute("userId");
 %>
 <head>
     <title>主界面</title>
@@ -32,7 +30,7 @@
 						"icon-sys",
 				"menus":
 						[{"icon":"icon-nav","menuname":"人员列表","url":"/pfuser/findPfUserList"},
-						{"icon":"icon-nav","menuname":"人员角色管理","url":"/pfuser/queryForPageList"}
+						{"icon":"icon-nav","menuname":"人员角色管理","url":"/pfuserdept/findPfuser"}
 						],
 				"menuid":
 						"610","menuname":"人员信息管理"
@@ -130,31 +128,8 @@ div.menu ul li a:active
 </script>
 </head>
 <body class="easyui-layout" style="overflow-y: hidden"  scroll="no">
-	<input id="currentUserId" value="<%=userId%>">
-    <div region="north" split="true" border="false" style="overflow: hidden; height:65px; line-height: 30px;color: #fff; font-family:Times New Roman,宋体">
-        <div style="height:60px;background-image:url('<%=request.getContextPath() %>/static/img/index/top.png');background-size:100%;background-repeat: no-repeat;">
-						<%
-							Date date=new Date();
-							DateFormat nowdate = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-							String now = nowdate.format(date);
-						 %>
-			      <span id='uInfo' style="color:black;float:right; padding-right:20px;padding-top: 20px; float:right;" class="head" >
-			    	 您好！<input id="serialNum" value="serialNum" width='120' style='background:transparent;border:0px' readonly="readonly" onkeydown="stop();"/>
-<!--			    	 <shiro:principal/>&nbsp;&nbsp;&nbsp;&nbsp;-->
-			                         登录时间: 
-			        <input class="right" name="insertdata" type="hidden" id="insertdata" style="color:black;font-size:14px;border: 0px;" readonly="readonly" value="<%=now %>"></input>
-						<%=now %>&nbsp;&nbsp;&nbsp;&nbsp;
-			        <a id="loginOut1" style="color:black;cursor:pointer;text-decoration:none;" onclick="return doLogOut();">安全退出</a>
-			      </span>
-        </div>
-        
-        <div style="width: 100%; background-color: transparent;border: none;">
-	        <div class="menu"  style="width: 90%;background-color: transparent;border: none; float: left;">
-	        </div>
-        </div>
-    </div>
     <div region="south" split="true" style="height: 29px; ">
-        <div style="color:black;text-align:center;padding-top:3px;">教育卡密钥管理系统欢迎您!&nbsp;&nbsp;&nbsp;&nbsp;Copyright © 2016 – 2025 MYGL All Rights Reserved.v1.0</div>
+        <div style="color:black;text-align:center;padding-top:3px;">helloworld!&nbsp;&nbsp;&nbsp;&nbsp;Copyright © 2016 – 2025 MYGL All Rights Reserved.v1.0</div>
     </div>
     <div region="west" split="true" title="菜单栏" style="width:220px;" id="west" >
            <div class="easyui-accordion" fit="true" border="false" >
@@ -184,21 +159,6 @@ div.menu ul li a:active
     <div id="mainPanle" style="background-image:url('<%=request.getContextPath() %>/static/images/changePic/xlogo.jpg');background-repeat: no-repeat;overflow-y:hidden" region="center">
 		 
         <div id="tabs" class="easyui-tabs"  fit="true" border="false">
-			<div title="首页" style="overflow:hidden;text-align:center;" id="home">
-				   <table cellpadding="0" cellspacing="0" border="0" width="100%" height="70%"style="margin:0px auto;">
-						<tr>
-						<td align="center" valign="middle" height='240px'>
-							<table width="100%"  style='background-color: transparent;;' cellspacing="0" cellpadding="0" >
-							   	<tr>
-								    <td align='center' height='60px;' style='font-family:"楷体";font-size:36px;'>
-									 	教育卡密钥管理系统欢迎您！
-			   							<br/> 当您完成工作，请务必退出系统。
-									</td>
-							  	</tr>
-							</table>
-						</tr>
-					</table>
-				</div>
 			</div>
 		</div>
 

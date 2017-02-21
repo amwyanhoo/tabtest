@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.amwyanhoo.dao.PfUserDao">
+
+<!--	<resultMap id="BaseResultMap" type="com.amwyanhoo.entity.PfUserCopy">-->
+<!--	       数据库表字段                         实体类属性 -->
+<!--	    <id column="userid" property="userid" />-->
+<!--	    <result column="username" property="username" />-->
+<!--	    <association property="pfUserDept">-->
+<!--	    	<id column="userid" property="userid" />-->
+<!--	    	<result column="name" property="pfRole.name" />-->
+<!--	    </association>-->
+<!--	</resultMap>-->
+
 	<!-- 定义商品查询的sql片段，就是商品查询条件 -->
 	<sql id="query_items_where">
    	<!-- 使用动态sql，通过if判断，满足条件进行sql拼接 -->
@@ -23,5 +34,10 @@
   		<where>
   			<include refid="query_items_where"></include>
   		</where>
+  	</select>
+  	
+  	<select id="findPfUserListwithrole" parameterType="com.amwyanhoo.entity.PfUserPack"
+  		 resultType="com.amwyanhoo.entity.PfUserCopy">
+  		select a.userid,a.username,c.roleid from pfuser a left join pfuserdept b on a.userid=b.userid left join pfrole c on b.roleid=c.roleid  
   	</select>
 </mapper>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.amwyanhoo.dao.PfRoleMapper">
+  <resultMap id="BaseResultMap" type="com.amwyanhoo.entity.PfRole">
+    <id column="ROLEID" jdbcType="DECIMAL" property="roleid" />
+    <result column="NAME" jdbcType="VARCHAR" property="name" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="DEPTID" jdbcType="CHAR" property="deptid" />
+    <result column="REMARK" jdbcType="CHAR" property="remark" />
+    <result column="ASSIGNREMARK" jdbcType="CHAR" property="assignremark" />
+    <result column="SORTINDEX" jdbcType="DECIMAL" property="sortindex" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ROLEID, NAME, DESCRIPTION, DEPTID, REMARK, ASSIGNREMARK, SORTINDEX
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Short" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from PFROLE
+    where ROLEID = #{roleid,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Short">
+    delete from PFROLE
+    where ROLEID = #{roleid,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="com.amwyanhoo.entity.PfRole">
+    insert into PFROLE (ROLEID, NAME, DESCRIPTION, 
+      DEPTID, REMARK, ASSIGNREMARK, 
+      SORTINDEX)
+    values (#{roleid,jdbcType=DECIMAL}, #{name,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
+      #{deptid,jdbcType=CHAR}, #{remark,jdbcType=CHAR}, #{assignremark,jdbcType=CHAR}, 
+      #{sortindex,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.amwyanhoo.entity.PfRole">
+    insert into PFROLE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="roleid != null">
+        ROLEID,
+      </if>
+      <if test="name != null">
+        NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="deptid != null">
+        DEPTID,
+      </if>
+      <if test="remark != null">
+        REMARK,
+      </if>
+      <if test="assignremark != null">
+        ASSIGNREMARK,
+      </if>
+      <if test="sortindex != null">
+        SORTINDEX,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="roleid != null">
+        #{roleid,jdbcType=DECIMAL},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="deptid != null">
+        #{deptid,jdbcType=CHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=CHAR},
+      </if>
+      <if test="assignremark != null">
+        #{assignremark,jdbcType=CHAR},
+      </if>
+      <if test="sortindex != null">
+        #{sortindex,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.amwyanhoo.entity.PfRole">
+    update PFROLE
+    <set>
+      <if test="name != null">
+        NAME = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="deptid != null">
+        DEPTID = #{deptid,jdbcType=CHAR},
+      </if>
+      <if test="remark != null">
+        REMARK = #{remark,jdbcType=CHAR},
+      </if>
+      <if test="assignremark != null">
+        ASSIGNREMARK = #{assignremark,jdbcType=CHAR},
+      </if>
+      <if test="sortindex != null">
+        SORTINDEX = #{sortindex,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where ROLEID = #{roleid,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.amwyanhoo.entity.PfRole">
+    update PFROLE
+    set NAME = #{name,jdbcType=VARCHAR},
+      DESCRIPTION = #{description,jdbcType=VARCHAR},
+      DEPTID = #{deptid,jdbcType=CHAR},
+      REMARK = #{remark,jdbcType=CHAR},
+      ASSIGNREMARK = #{assignremark,jdbcType=CHAR},
+      SORTINDEX = #{sortindex,jdbcType=DECIMAL}
+    where ROLEID = #{roleid,jdbcType=DECIMAL}
+  </update>
+ 
+  
+</mapper>

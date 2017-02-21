@@ -1,12 +1,12 @@
 package com.amwyanhoo.entity;
 
 
-//°ü×°Àà£¬ÓÃÒÔ½ÓÊÕÇ°Ì¨µÄÇëÇó²ÎÊı
+//æ¥æ”¶å‰å°å‚æ•°åŒ…è£…ç±»ï¼Œä¸€åˆ‡å‚æ•°å‡ç”±è¯¥ç±»æ¥æ”¶ã€‚
 
 public class PfUserPack{
 	private PfUser pfuser;
-	
-	private PfUserCopy pfusercopy;
+	private PfUserDept pfUserDept;
+	private PfRole pfRole;
 
 	public void setPfuser(PfUser pfuser) {
 		this.pfuser = pfuser;
@@ -16,11 +16,19 @@ public class PfUserPack{
 		return pfuser;
 	}
 
-	public void setPfusercopy(PfUserCopy pfusercopy) {
-		this.pfusercopy = pfusercopy;
+	public void setPfUserDept(PfUserDept pfUserDept) {
+		this.pfUserDept = pfUserDept;
 	}
 
-	public PfUserCopy getPfusercopy() {
-		return pfusercopy;
+	public PfUserDept getPfUserDept() {
+		return pfUserDept;
+	}
+
+	public void setPfRole(PfRole pfRole) {
+		this.pfRole = pfRole;
+	}
+
+	public PfRole getPfRole() {
+		return pfRole;
 	}
 }
